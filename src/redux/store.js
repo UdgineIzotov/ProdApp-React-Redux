@@ -1,13 +1,31 @@
-import  { createStore } from 'redux'
+import  { createStore, combineReducers } from 'redux'
 
-const taskList = ( state = [], action) => {
-    console.log(action);
-    return state;
-}
+import settingsReducer from './settingsReducer'
+import settingsPageReducer from './settingsPageReducer'
 
-const store = createStore(taskList);
 
-console.log(store.getState());
+
+const redusers = combineReducers({
+    settings: settingsReducer,
+    settingsPage: settingsPageReducer
+})
+const store = createStore(redusers, {
+    settings: {
+        workTime: 15,
+        shortBreak: 3,
+        longBreak: 25,
+        workIterations: 4,
+    },
+    settingsPage: {
+        tabs: ['Settings', 'Categories'],
+        currentTab: 'Settings'
+    }
+
+});
+
+store.subscribe( () => {
+    console.log("store changed", store.getState());
+})
 
 store.dispatch({ type: 'ADD_TRACK', payload: 'Smells like spirit' });
 

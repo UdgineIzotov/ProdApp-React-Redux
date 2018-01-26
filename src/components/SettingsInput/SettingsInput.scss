@@ -1,0 +1,91 @@
+@import "../../assets/sass/_variables.scss";
+@import "../../assets/sass/_typography.scss";
+@import "../../assets/sass/_mixins.scss";
+@import "../../assets/sass/general.scss";
+
+.settings-input-container{
+  float: left;
+  width: 325px;
+  padding-bottom: 45px;
+  text-align: left;
+}
+
+.settings-caption {
+  display: inline;
+  position: relative;
+  margin-right: 50px;
+  line-height: 15.36px;
+  color: white;
+
+  &:before {
+    display: block;
+    position: absolute;
+    float: left;
+    left: -32px;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    content: "";
+  }
+}
+
+.settings-note {
+  margin: 15px 0;
+  color: $Nepal;
+}
+
+.time {
+  color: white;
+}
+
+.settings-input {
+  position: relative;
+  display: inline-block;
+  float: right;
+  top: -3px;
+  right: 50px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid $Nepal;
+  user-select: none;
+
+  &:hover {
+    border-color: $Spray;
+
+    .settings-input-field {
+      color: white;
+    }
+  }
+  &-field {
+    display: inline-block;
+    padding: 0 10px;
+    width: 16px;
+    text-align: center;
+    color: $Nepal;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+  }
+  &-plus,
+  &-minus {
+    padding: 0 10px;
+    display: inline-block;
+    font-size: 12px;
+    color: $Nepal;
+
+    &:hover {
+      color: $Spray;
+      cursor: pointer;
+    }
+  }
+  &-plus:before {
+    font-family: icomoon;
+    display: block;
+    content: "\e900";
+  }
+  &-minus:before {
+    font-family: icomoon;
+    display: block;
+    content: "\e90b";
+  }
+
+}

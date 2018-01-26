@@ -21,8 +21,12 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-            { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
+            { test: /\.jsx?$/,
+              loader: 'babel-loader',
+              exclude: /node_modules/,
+              query: {
+                  plugins: ['transform-decorators-legacy']
+              }},
             { test: /\.scss$/, loaders: ["style-loader", "css-loader", "sass-loader"]},
             { test: /\.(jpe?g|png|svg|eot|ttf|woff)$/,
                 use: [{  loader: 'url-loader',
@@ -40,5 +44,12 @@ module.exports = {
         new CopyWebpackPlugin([
             'src/assets/images',
             {from: 'src/assets/fonts', to: 'fonts/'}
-        ]),]
+        ]),
+    ],
+    devServer: {
+        contentBase: '/',
+        port: 8080,
+        historyApiFallback: true,
+    },
+
 }

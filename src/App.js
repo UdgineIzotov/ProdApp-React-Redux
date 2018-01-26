@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import { getRoutes } from './services/Router'
 import  Store from './redux/store'
 
+
 import  './App.scss'
 
 class App extends Component {

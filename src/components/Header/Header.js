@@ -13,7 +13,7 @@ class HeaderComponent extends Component {
             <header>
                 <h1 className="logo">
                     <Link to="/" title="logo">
-                        <img src="/Logo.svg" alt="" width="100%" height="100%" alt="logo-image" />
+                        <img src="/Logo.svg" width="100%" height="100%" alt="logo-image" />
                     </Link>
                 </h1>
                 <nav>
